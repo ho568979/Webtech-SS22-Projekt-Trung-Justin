@@ -9,7 +9,7 @@ Matrikel-Nr.: s0575713
 Name: Justin Thanh Trung Ho
 Matrikel-Nr.: s0568979
 
-Thema: Notizapp
-*schreiben von Notizen 
-*loeschen von Notizen 
+Thema: Notizapp/ ToDo
+*schreiben von Notizen/ Aufgaben 
+*loeschen von Notizen/ Aufgaben 
 *Termine setzen
