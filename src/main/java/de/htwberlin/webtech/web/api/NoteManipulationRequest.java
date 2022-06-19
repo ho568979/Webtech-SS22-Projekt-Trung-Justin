@@ -12,6 +12,7 @@ public class NoteManipulationRequest {
         this.done = done;
     }
 
+    public NoteManipulationRequest(){}
     public String getTitle() {
         return title;
     }
