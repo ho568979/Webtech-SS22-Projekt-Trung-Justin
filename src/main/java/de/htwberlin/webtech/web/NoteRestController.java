@@ -6,6 +6,7 @@ import de.htwberlin.webtech.web.api.NoteManipulationRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -31,7 +32,7 @@ public class NoteRestController {
     }
 
     @PostMapping(path = "/api/v1/notes")
-    public ResponseEntity<Void> createNote(@RequestBody NoteManipulationRequest request) throws URISyntaxException {
+    public ResponseEntity<Void> createNote(@Valid @RequestBody NoteManipulationRequest request) throws URISyntaxException {
         var note = noteService.create(request);
         URI uri = new URI("/api/v1/notes/" + note.getId());
         return ResponseEntity.created(uri).build();

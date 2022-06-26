@@ -1,9 +1,21 @@
 package de.htwberlin.webtech.web.api;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class NoteManipulationRequest {
 
+    @Size(min = 3, message = "Please provide a first name with 3 characters or more.")
     private String title;
+
+    @NotBlank(message = "Please type in your note")
     private String body;
+
+//    @Pattern(
+//            regexp = "done|not done",
+//            message = "Please check if it's done"
+//    )
     private boolean done;
 
     public NoteManipulationRequest(String title, String body, boolean done) {
