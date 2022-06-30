@@ -1,6 +1,10 @@
 package de.htwberlin.webtech.persistence;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity(name = "notes")
 public class NoteEntity {
@@ -18,6 +22,10 @@ public class NoteEntity {
 
     @Column(name = "is_done")
     private boolean done;
+
+    @CreationTimestamp
+    @Column(name = "created_time")
+    private LocalDateTime createdtime;
 
     public NoteEntity(String title, String body, boolean done) {
         this.id = id;
@@ -56,4 +64,9 @@ public class NoteEntity {
     public void setDone(boolean done) {
         this.done = done;
     }
+
+    public LocalDateTime getCreatedtime() {
+        return createdtime;
+    }
+
 }

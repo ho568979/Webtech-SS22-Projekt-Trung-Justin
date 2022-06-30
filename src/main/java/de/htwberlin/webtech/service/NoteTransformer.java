@@ -4,6 +4,7 @@ import de.htwberlin.webtech.persistence.NoteEntity;
 import de.htwberlin.webtech.web.api.Note;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.stream.Collectors;
 
 @Service
@@ -13,7 +14,8 @@ public class NoteTransformer {
                     noteEntity.getId(),
                     noteEntity.getTitle(),
                     noteEntity.getBody(),
-                    noteEntity.getDone()
+                    noteEntity.getDone(),
+                    Timestamp.valueOf(noteEntity.getCreatedtime())
             );
         }
 }

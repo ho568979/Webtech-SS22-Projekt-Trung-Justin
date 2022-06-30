@@ -6,6 +6,7 @@ import de.htwberlin.webtech.web.api.Note;
 import de.htwberlin.webtech.web.api.NoteManipulationRequest;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -62,7 +63,8 @@ public class NoteService {
                 noteEntity.getId(),
                 noteEntity.getTitle(),
                 noteEntity.getBody(),
-                noteEntity.getDone()
+                noteEntity.getDone(),
+                Timestamp.valueOf(noteEntity.getCreatedtime())
         );
     }
 }
